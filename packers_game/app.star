@@ -174,7 +174,7 @@ def live_leaders(c, g, cats):
             a = l["leaders"][0]
             dv = ", ".join(l["leaders"][0]["displayValue"].split(", ")[:3])  # drop INT so it fits
             s = a["athlete"]["shortName"] + " " + dv.replace(",", "").replace(" YDS", "Y").replace(" CAR", "C").replace(" TD", "TD") + suffix
-            c.text(trunc(c, s.upper(), cw - 4, "4x7"), LW + 6 + j * cw, 1 + r * rh + (rh - 7) // 2, font = "4x7", color = "green" if j == 0 else "white")
+            c.text(trunc(c, s.upper(), cw - 4, "4x5"), LW + 6 + j * cw, 1 + r * rh + (rh - 5) // 2, font = "4x5", color = "green" if j == 0 else "white")
 
 # ---------- pages ----------
 def route(c, g, pre_fn, live_fn):
@@ -197,11 +197,4 @@ def third(c, ctx):
     if g == None:
         say(c, "NO PACKERS GAME")
     else:
-        live_leaders(c, g, [("passingYards", ""), ("rushingYards", ""), ("receivingYards", "")])
-
-def fourth(c, ctx):
-    g = load_game()
-    if g == None:
-        say(c, "NO PACKERS GAME")
-    else:
-        live_leaders(c, g, [("sacks", " SCK"), ("totalTackles", " TKL")])
+        live_leaders(c, g, [("passingYards", ""), ("rushingYards", ""), ("receivingYards", ""), ("sacks", " SCK"), ("totalTackles", " TKL")])

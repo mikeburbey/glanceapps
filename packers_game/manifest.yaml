@@ -8,7 +8,7 @@ category: Sports
 entry: app.star
 width: 384
 height: 32
-refresh: 60
+refresh: 120
 # Pages 1-2 change with game state (pre: matchup+line, injuries; live: scoreboard, team stats).
-# Pages 3-4 are offense/defense leaders (season leaders before kickoff, game leaders after).
-pages: [main, second, third, fourth]
+# Page 3 is offense + defense leaders (season leaders before kickoff, game leaders after).
+pages: [main, second, third]
